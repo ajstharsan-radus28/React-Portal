@@ -16,19 +16,20 @@ import SubHeader from './SubHeader'
 //     />
 // );
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+const dataProviderComments = jsonServerProvider('https://jsonplaceholder.typicode.com/comments');
 
 const App = () => (
-
-<>
-<CustomRoutes>
-    <Route path="/SubHeader" element={<SubHeader />} />
-</CustomRoutes>
-
+    <>
         <Admin layout={QLERLayout} loginPage={QLERLoginPage} dataProvider={dataProvider} authProvider={authProvider}>
 
             <Resource name="todos" list={ListGuesser} />
+            <Resource name="posts" list={ListGuesser} />
+                        <Resource name="comments" list={ListGuesser} />
+            <Resource name="users" list={ListGuesser} />
+
         </Admin>
-        </>
+
+    </>
 
 );
 

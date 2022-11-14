@@ -1,9 +1,11 @@
 import * as React from "react";
 // import { Admin, Resource, ListGuesser } from 'react-admin';
+import CONF from './config.json';
 
 const authProvider = {
     login: ({ username, password }) =>  {
-        const request = new Request('https://localhost/qler/modules/Mobile/api.php', {
+        localStorage.setItem('username', username);
+        const request = new Request(CONF.CRM_ENDPOINT, {
             method: 'POST',
             body: JSON.stringify({'_operation' : 'login','username' : username,'password' : password }),
             headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -21,7 +23,6 @@ const authProvider = {
                 if( auth.success && auth.result.login!=undefined){
                     // alert(JSON.stringify(auth.result.login));
                     localStorage.setItem('auth', JSON.stringify(auth.result.login));
-                    localStorage.setItem('username', username);
                     localStorage.setItem('vtsession', auth.result.login.session);
                 }
             })
@@ -35,7 +36,7 @@ const authProvider = {
         return Promise.resolve();
     },
     checkAuth: () =>
-    localStorage.getItem('username') ? Promise.resolve() : Promise.reject(),
+    localStorage.getItem('vtsession') ? Promise.resolve() : Promise.reject(),
     checkError:  (error) => {
             const status = error.status;
             if (status === 401 || status === 403) {
@@ -48,7 +49,7 @@ const authProvider = {
     getIdentity: () =>
         Promise.resolve({
             id: 'user',
-            fullName: 'John Doe',
+            fullName: localStorage.getItem('username') ,
         }),
     getPermissions: () => Promise.resolve(''),
 };
