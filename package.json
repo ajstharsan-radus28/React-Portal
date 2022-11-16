@@ -1,5 +1,6 @@
 {
   "name": "qler-portal",
+  "homepage":"https://ashy-island-0bde17d10.2.azurestaticapps.net/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
