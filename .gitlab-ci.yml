@@ -7,12 +7,12 @@ image: registry.gitlab.com/static-web-apps/azure-static-web-apps-deploy
 install:
    stage: .pre
    script:
-      - yarn install
+      - npm install
 
 build:
    stage: build
    script:
-      - CI=false yarn run build
+      - CI=false npm run build
 
 deploy:
   stage: deploy
