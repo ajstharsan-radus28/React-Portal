@@ -14,6 +14,7 @@ build:
    script:
       - CI=false yarn run build
    steps:
+     with:
        app_location: "src"
        output_location: "public"
 
