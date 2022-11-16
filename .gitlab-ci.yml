@@ -3,7 +3,7 @@ variables:
   APP_PATH: '$CI_PROJECT_DIR/build'
   
 install:
-   stage: install
+   stage: pre
    script:
       - npm install
 
