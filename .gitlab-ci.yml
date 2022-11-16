@@ -5,12 +5,12 @@ variables:
 install:
    stage: .pre
    script:
-      - npm install
+      - yarn install
 
 build:
    stage: build
    script:
-      - CI=false npm run build
+      - CI=false yarn run build
 
 deploy:
   stage: deploy
