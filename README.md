@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Getting Started
+
+This is a skeleton React frontend app which can be used as a Portal to different backends, such CRMs, ERP and ECommerce. There is a sample intergration is done with vtiger CRM
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
