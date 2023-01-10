@@ -48,7 +48,7 @@ const QLERAppBar = (props) => (
         userMenu = {<MyUserMenu />}
     >
     <Image
-        src="https://cdn2.hubspot.net/hub/8751551/hubfs/qler-social-logos.jpg?width=88&height=60"
+        src="https://crm74.radus28.com/test/logo/logo_web.png"
         height="60px"
         width="88px"
         fit="cover"
