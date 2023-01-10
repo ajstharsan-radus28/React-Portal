@@ -50,7 +50,7 @@ const QLERAppBar = (props) => (
     <Image
         src="https://crm74.radus28.com/test/logo/logo_web.png"
         height="60px"
-        width="88px"
+        width="198px"
         fit="cover"
         duration={3000}
         easing="ease-in"
